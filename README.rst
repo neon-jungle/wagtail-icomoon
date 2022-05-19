@@ -23,6 +23,8 @@ Then add the following to your ``settings.py``:
 Usage
 =====
 
+Icons are prefixed with `im-` to avoid clashes with existing icons.
+
 e.g. for a streamfield block
 
 
@@ -32,13 +34,20 @@ e.g. for a streamfield block
 
     class DemoBlock(blocks.CharBlock):
         class Meta:
-            icon = 'camera'
+            icon = 'im-camera'
 
     
     # or as part of the initialisation of a StreamField
     body = StreamField([
-        ('demo', blocks.CharBlock(icon='star')),
+        ('demo', blocks.CharBlock(icon='im-star')),
     ])
+
+In a template
+
+.. code-block:: html+django
+
+    {% load wagtailadmin_tags %}
+    {% icon name="im-wrench" classname="..." title="Fix" %}
 
 
 For a complete list of icons, see the `IcoMoon <https://icomoon.io/#preview-free>`_ website, or check the `templates/icons` directory of this project.

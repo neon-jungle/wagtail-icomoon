@@ -11,6 +11,6 @@ if __name__ == "__main__":
         for attr in ['xmlns', 'width', 'height']:
             for element in markup.find_all(attrs={attr: True}):
                 del element[attr]
-        markup.find('svg').attrs['id'] = f'icon-{icon_file.stem}'
+        markup.find('svg').attrs['id'] = f'icon-im-{icon_file.stem}'
         icon_file.write_text(markup.prettify())
         print(f'Cleaned {icon_file}')
