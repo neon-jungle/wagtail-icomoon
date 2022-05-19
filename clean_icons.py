@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 if __name__ == "__main__":
     # Convenience script for removing bad attributes and making the icons wagtail-able
-    icons_dir = Path(__file__).parent.joinpath('icomoon', 'templates','icons')
+    icons_dir = Path(__file__).parent.joinpath('icomoon', 'templates', 'icons')
     for icon_file in icons_dir.glob('*.svg'):
         markup = BeautifulSoup(icon_file.read_text(), 'html.parser')
         for attr in ['xmlns', 'width', 'height']:
